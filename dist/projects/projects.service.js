@@ -6,25 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.ProjectsService = void 0;
 const common_1 = require("@nestjs/common");
-const config_1 = require("@nestjs/config");
-const database_module_1 = require("./database/database.module");
-const users_module_1 = require("./users/users.module");
-const auth_module_1 = require("./auth/auth.module");
-let AppModule = class AppModule {
+let ProjectsService = class ProjectsService {
+    create(createProjectDto) {
+        return 'This action adds a new project';
+    }
+    findAll() {
+        return `This action returns all projects`;
+    }
+    findOne(id) {
+        return `This action returns a #${id} project`;
+    }
+    update(id, updateProjectDto) {
+        return `This action updates a #${id} project`;
+    }
+    remove(id) {
+        return `This action removes a #${id} project`;
+    }
 };
-AppModule = __decorate([
-    (0, common_1.Module)({
-        imports: [
-            config_1.ConfigModule.forRoot({ isGlobal: true }),
-            database_module_1.DatabaseModule,
-            users_module_1.UsersModule,
-            auth_module_1.AuthModule,
-        ],
-        controllers: [],
-        providers: [],
-    })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+ProjectsService = __decorate([
+    (0, common_1.Injectable)()
+], ProjectsService);
+exports.ProjectsService = ProjectsService;
+//# sourceMappingURL=projects.service.js.map
